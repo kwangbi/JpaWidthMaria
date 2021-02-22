@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BoardEntity implements Serializable {
+public class BoardEntity extends BaseTimeEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -34,5 +34,15 @@ public class BoardEntity implements Serializable {
 	@Column(name = "contents", nullable = false, length = 4000)
 	private String contents;
 	
-
+	@Builder
+	public BoardEntity(String title,String contents) {
+		this.title = title;
+		this.contents = contents;
+	}
+	
+	public void update(String title,String contents) {
+		this.title = title;
+		this.contents = contents;
+	}
+	
 }

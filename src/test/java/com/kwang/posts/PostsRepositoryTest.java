@@ -6,6 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.aspectj.lang.annotation.After;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +19,6 @@ public class PostsRepositoryTest {
 
 	@Autowired
 	PostsRepository postsRepository;
-
 	
 	@Test
 	public void getData() {

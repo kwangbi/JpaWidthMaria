@@ -1,5 +1,7 @@
 package com.kwang.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PostsEntity extends BaseTimeEntity {
+public class PostsEntity extends BaseTimeEntity implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +41,11 @@ public class PostsEntity extends BaseTimeEntity {
 		this.title = title;
 		this.content = content;
 		this.author = author;
+	}
+	
+	public void update(String title,String content) {
+		this.title = title;
+		this.content = content;
 	}
 
 }

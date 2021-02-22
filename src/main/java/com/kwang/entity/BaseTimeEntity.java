@@ -3,6 +3,7 @@ package com.kwang.entity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
@@ -19,9 +20,11 @@ public class BaseTimeEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@CreatedDate
+	@Column(name = "regdtm")
 	private LocalDateTime createDate;
 
 	@LastModifiedDate
+	@Column(name = "auditdtm")
 	private LocalDateTime modifiedDate;
 
 }
